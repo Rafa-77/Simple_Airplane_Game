@@ -11,23 +11,23 @@ screen = pygame.display.set_mode((800, 600))
 
 # Background
 background = pygame.image.load(
-    r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\background.png")
+    r".\Proyectos\Code_Pygame\background.png")
 
 # Background sound
 # mixer.music.load(
-#    r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\background.wav")
+#    r".\Proyectos\Code_Pygame\background.wav")
 # mixer.music.play(-1)
 
 # Caption and Icon
 pygame.display.set_caption("Space Invaders")
 icon = pygame.image.load(
-    r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\ufo.png")
+    r".\Proyectos\Code_Pygame\ufo.png")
 pygame.display.set_icon(icon)
 
 
 # Player
 playerimg = pygame.image.load(
-    r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\transport.png")
+    r".\Proyectos\Code_Pygame\transport.png")
 playerX = 370
 playerY = 500
 playerX_change = 0
@@ -42,7 +42,7 @@ num_of_enemies = 6
 
 for i in range(num_of_enemies):
     enemyimg.append(pygame.image.load(
-        r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\enemy.png"))
+        r".\Proyectos\Code_Pygame\enemy.png"))
 
     enemyX.append(random.randint(0, 736))
     enemyY.append(random.randint(0, 150))
@@ -51,7 +51,7 @@ for i in range(num_of_enemies):
 
 # Bullet
 bulletimg = pygame.image.load(
-    r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\bullet.png")
+    r".\Proyectos\Code_Pygame\bullet.png")
 bulletX = 0
 bulletY = playerY
 bulletY_change = 7
@@ -125,7 +125,7 @@ while running:
             if event.key == pygame.K_SPACE:
                 if bullet_state is "Ready":
                     bullet_sound = mixer.Sound(
-                        r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\laser.wav")
+                        r".\Proyectos\Code_Pygame\laser.wav")
                     bullet_sound.play()
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
@@ -163,7 +163,7 @@ while running:
         collition = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collition:
             collition_sound = mixer.Sound(
-                r"C:\\Users\miria\Desktop\Programacion Cuarentena\Pygame tutorial\explosion.wav")
+                r".\Proyectos\Code_Pygame\explosion.wav")
             collition_sound.play()
             bulletY = playerY
             bullet_state = "Ready"
